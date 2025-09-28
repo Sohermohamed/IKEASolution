@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKEA.PL", "IKEA.PL\IKEA.PL.csproj", "{64CEEE12-FBEE-4782-B0D3-DFAB0312F885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKEA.BLL", "IKEA.BLL\IKEA.BLL.csproj", "{8C63C4B7-4A19-4F47-BCCD-3A1934ABF232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKEA.DAL", "IKEA.DAL\IKEA.DAL.csproj", "{B5C59DB4-8F55-42DA-879F-4FD7533E1B1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64CEEE12-FBEE-4782-B0D3-DFAB0312F885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CEEE12-FBEE-4782-B0D3-DFAB0312F885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CEEE12-FBEE-4782-B0D3-DFAB0312F885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CEEE12-FBEE-4782-B0D3-DFAB0312F885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C63C4B7-4A19-4F47-BCCD-3A1934ABF232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C63C4B7-4A19-4F47-BCCD-3A1934ABF232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C63C4B7-4A19-4F47-BCCD-3A1934ABF232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C63C4B7-4A19-4F47-BCCD-3A1934ABF232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C59DB4-8F55-42DA-879F-4FD7533E1B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C59DB4-8F55-42DA-879F-4FD7533E1B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C59DB4-8F55-42DA-879F-4FD7533E1B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C59DB4-8F55-42DA-879F-4FD7533E1B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {466BF7E9-79AD-48A9-938B-9697B659C056}
+	EndGlobalSection
+EndGlobal
