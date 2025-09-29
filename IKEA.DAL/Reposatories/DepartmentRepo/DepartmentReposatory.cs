@@ -1,4 +1,5 @@
 ﻿using IKEA.DAL.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,55 +8,49 @@ using System.Threading.Tasks;
 
 namespace IKEA.DAL.Reposatories.DepartmentRepo
 {
-   public class DepartmentReposatory
-    {
-        private ApplicationDbContext _context;
-        public DepartmentReposatory(ApplicationDbContext context)
+   public class DepartmentReposatory(ApplicationDbContext _dbContext) : IdepartmentReposatory
+    {     
+        // GetAll
+        public IEnumerable<Department> GetAll(bool withTracking = false)
         {
-            _context = context;
-        }
-
-        public IEnumerable<Department> GetALLDepartments()
-        {
-            var Departments = _context.Departments.ToList();
-            return Departments;
-        }
-        public Department GetDepartmentById(int id)
-        {
-            using (var context = new Contexts.ApplicationDbContext())
-            {
-                return context.Departments.FirstOrDefault(d => d.Id == id && !d.IsDeleted);
-            }
-        }
-        public void AddDepartment(Department department)
-        {
-            using (var context = new Contexts.ApplicationDbContext())
-            {
-                context.Departments.Add(department);
-                context.SaveChanges();
-            }
-        }
-        public void UpdateDepartment(Department department)
-        {
-            using (var context = new Contexts.ApplicationDbContext())
-            {
-                context.Departments.Update(department);
-                context.SaveChanges();
-            }
-        }
-        public void DeleteDepartment(int id)
-        {
-            using (var context = new Contexts.ApplicationDbContext())
-            {
-                var department = context.Departments.FirstOrDefault(d => d.Id == id);
-                if (department != null)
-                {
-                    department.IsDeleted = true;
-                    context.SaveChanges();
-                }
-            }
-
-
+            if (withTracking)
+                return _dbContext.Departments.ToList();
+            else
+                return _dbContext.Departments.AsNoTracking().ToList();
 
         }
+
+        // GetById
+        //public Department GetById(int id)
+        //{
+        //    var department = _dbContext.Departments.Find(id);
+        //    return department;
+        //}
+        public Department GetById(int id) => _dbContext.Departments.Find(id);
+
+        // Add
+        public int Add(Department department)
+        {
+            _dbContext.Departments.Add(department); // Add Locally
+            return _dbContext.SaveChanges();
+            // _dbContext.Add(department);
+            // _dbContext.Set<Department>().Add(department);
+        }
+
+        // Update
+        public int Update(Department department)
+        {
+            _dbContext.Departments.Update(department);
+            return _dbContext.SaveChanges(); // num of row affected
+        }
+
+        // Delete
+        public int Remove(Department department)
+        {
+            _dbContext.Departments.Remove(department);
+            return _dbContext.SaveChanges();
+        }
+
+
+    }
 }
